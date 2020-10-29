@@ -24,13 +24,22 @@
 
 %% RFC: https://tools.ietf.org/html/rfc3588#section-8.15
 -define(DEFAULT_TERMINATION_CAUSE_MAPPING, [
-    {normal, 1},              % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {administrative, 4},      % ?'DIAMETER_BASE_TERMINATION-CAUSE_ADMINISTRATIVE'
-    {link_broken, 5},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LINK_BROKEN'
-    {upf_failure, 5},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LINK_BROKEN'
-    {remote_failure, 1},      % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {inactivity_timeout, 1},  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {peer_restart, 1}         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {normal, 1},                 % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {administrative, 4},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_ADMINISTRATIVE'
+    {link_broken, 5},            % ?'DIAMETER_BASE_TERMINATION-CAUSE_LINK_BROKEN'
+    {upf_failure, 5},            % ?'DIAMETER_BASE_TERMINATION-CAUSE_LINK_BROKEN'
+    {remote_failure, 1},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {cp_inactivity_timeout, 1},  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {up_inactivity_timeout, 1},  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {peer_restart, 1},           % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_asr, 1},                % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_error, 1},              % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_asr, 1},                % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_error, 1},              % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_req_timeout, 1},        % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_conn_error, 1},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_rate_limit, 1},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {aaa_ocs_hold_end, 1}        % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
 ]).
 
 -define(VENDOR_ID_3GPP, 10415).

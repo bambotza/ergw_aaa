@@ -291,7 +291,7 @@ handle_cca({error, no_connection}, Session, Events,
     handle_cca(['CCA' | Avps], Session, Events, Opts, State);
 handle_cca(Result, Session, Events, _Opts, State) ->
     ?LOG(error, "CCA Result: ~p", [Result]),
-    {Result, Session, [stop | Events], State#state{state = stopped}}.
+    {Result, Session, [{stop, Result} | Events], State#state{state = stopped}}.
 
 %% handle_cca/7
 handle_cca('CCA', RC, AVPs, Session0, Events0, _Opts, State)
@@ -300,7 +300,7 @@ handle_cca('CCA', RC, AVPs, Session0, Events0, _Opts, State)
     {ok, Session, Events, State};
 handle_cca(Answer, RC, _AVPs, Session, Events, _Opts, State)
   when Answer =:= 'CCA'; Answer =:= 'answer-message' ->
-    {{fail, RC}, Session, [stop | Events], State#state{state = stopped}}.
+    {{fail, RC}, Session, [{stop, Answer} | Events], State#state{state = stopped}}.
 
 handle_common_request(Command, #{'Session-Id' := SessionId} = Avps, {_PeerRef, Caps}) ->
     {Result, ReplyAvps0} =

@@ -658,7 +658,7 @@ ocs_hold_initial_timeout(Config) ->
 		    'Reporting-Reason' => [?'DIAMETER_3GPP_CHARGING_REPORTING-REASON_VALIDITY_TIME']}
 	 },
     GyTerm = #{used_credits => maps:to_list(UsedCredits)},
-    ?match({{error, ocs_hold_end}, _Session2, [stop]},
+    ?match({{error, ocs_hold_end}, _Session2, [{stop, {error, ocs_hold_end}}]},
 	   ergw_aaa_session:invoke(SId, GyTerm, {gy, 'CCR-Update'}, [])),
 
     Stats1 = diff_stats(Stats0, get_stats(?SERVICE)),
@@ -721,7 +721,7 @@ ocs_hold_update_timeout(Config) ->
 
     GyTerm = #{'Termination-Cause' => ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT',
 	       used_credits => UsedCredits},
-    {{error, ocs_hold_end}, _Session3, [stop]} = ergw_aaa_session:invoke(SId, GyTerm, {gy, 'CCR-Terminate'}, []),
+    {{error, ocs_hold_end}, _Session3, [{stop, {error, ocs_hold_end}}]} = ergw_aaa_session:invoke(SId, GyTerm, {gy, 'CCR-Terminate'}, []),
 
     ?equal([{ergw_aaa_ro, ocs_hold, 0}, {ergw_aaa_ro, started, 0}], get_session_stats()),
 
@@ -791,7 +791,7 @@ ocs_hold_update_timeout_async(Config) ->
 
     GyTerm = #{'Termination-Cause' => ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT',
 	       used_credits => UsedCredits},
-    {{error, ocs_hold_end}, _Session3, [stop]} = ergw_aaa_session:invoke(SId, GyTerm, {gy, 'CCR-Terminate'}, []),
+    {{error, ocs_hold_end}, _Session3, [{stop, {error, ocs_hold_end}}]} = ergw_aaa_session:invoke(SId, GyTerm, {gy, 'CCR-Terminate'}, []),
 
     ?equal([{ergw_aaa_ro, ocs_hold, 0}, {ergw_aaa_ro, started, 0}], get_session_stats()),
 

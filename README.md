@@ -43,8 +43,15 @@ An example of this mapping:
             {link_broken, 5},      
             {upf_failure, 5},      
             {remote_failure, 1},   
-            {inactivity_timeout, 1},  
-            {peer_restart, 1} 
+            {cp_inactivity_timeout, 1},
+            {up_inactivity_timeout, 1},
+            {peer_restart, 1},
+            {aaa_asr, 1},
+            {aaa_error, 1},
+            {aaa_req_timeout, 1},
+            {aaa_conn_error, 1},
+            {aaa_rate_limit, 1},
+            {aaa_ocs_hold_end, 1}
         ]}
     ]}
     % ...
@@ -57,14 +64,21 @@ An example of this mapping:
 {ergw_aaa_radius, [
     {server, {{192,168,255,1}, 1813, <<"radproxy">>}},
         {termination_cause_mapping, [
-        {normal, 1},
-        {administrative, 6},
-        {link_broken, 2},
-        {upf_failure, 9},
-        {remote_failure, 9},
-        {inactivity_timeout, 4},
-        {peer_restart, 7}
-    ]}
+            {normal, 1},
+            {administrative, 6},
+            {link_broken, 2},
+            {upf_failure, 9},
+            {remote_failure, 9},
+            {cp_inactivity_timeout, 4},
+            {up_inactivity_timeout, 4},
+            {peer_restart, 7},
+            {aaa_asr, 6},
+            {aaa_error, 9},
+            {aaa_req_timeout, 4},
+            {aaa_conn_error, 10},
+            {aaa_rate_limit, 10},
+            {aaa_ocs_hold_end, 10}
+        ]}
 ]}
 % ...
 ```
@@ -128,8 +142,15 @@ Example of possible config.
             {link_broken, 2},
             {upf_failure, 9},
             {remote_failure, 9},
-            {inactivity_timeout, 4},
-            {peer_restart, 7}
+            {cp_inactivity_timeout, 4},
+            {up_inactivity_timeout, 4},
+            {peer_restart, 7},
+            {aaa_asr, 6},
+            {aaa_error, 9},
+            {aaa_req_timeout, 4},
+            {aaa_conn_error, 10},
+            {aaa_rate_limit, 10},
+            {aaa_ocs_hold_end, 10}
         ]}
      ]},
      {ergw_aaa_rf, [{transport, 'ergw-pgw-epc'}]},
@@ -141,8 +162,15 @@ Example of possible config.
             {link_broken, 5},      
             {upf_failure, 5},      
             {remote_failure, 1},   
-            {inactivity_timeout, 1},  
-            {peer_restart, 1} 
+            {cp_inactivity_timeout, 1},  
+            {up_inactivity_timeout, 1},
+            {peer_restart, 1},
+            {aaa_asr, 1},
+            {aaa_error, 1},
+            {aaa_req_timeout, 1},
+            {aaa_conn_error, 1},
+            {aaa_rate_limit, 1},
+            {aaa_ocs_hold_end, 1}
         ]}
      ]}
     ]},
