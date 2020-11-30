@@ -221,11 +221,10 @@ gx_session(Config) ->
     GxTerm = #{'Termination-Cause' => ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT',
 	       'Event-Trigger' => ?'DIAMETER_GX_EVENT-TRIGGER_UE_IP_ADDRESS_RELEASE',
 	       'Bearer-Operation' => ?'DIAMETER_GX_BEARER-OPERATION_TERMINATION'},
-	Procedure = {gx, 'CCR-Terminate'},
     {Result3, Session3, Events3} =
-	ergw_aaa_session:invoke(SId, GxTerm, Procedure, []),
+	ergw_aaa_session:invoke(SId, GxTerm, {gx, 'CCR-Terminate'}, []),
     ?equal({fail, 5003}, Result3),
-    ?match([{stop, Procedure}], Events3),
+    ?match([{stop, {?HUT, peer_reject}}], Events3),
     ?equal(false, maps:is_key('Result-Code', Session3)),
 
     %% make sure nothing crashed

@@ -46,12 +46,13 @@ An example of this mapping:
             {cp_inactivity_timeout, 1},
             {up_inactivity_timeout, 1},
             {peer_restart, 1},
-            {aaa_asr, 1},
-            {aaa_error, 1},
-            {aaa_req_timeout, 1},
-            {aaa_conn_error, 1},
-            {aaa_rate_limit, 1},
-            {aaa_ocs_hold_end, 1}
+            {asr, 1},
+            {error, 1},
+            {req_timeout, 1},
+            {conn_error, 1},
+            {rate_limit, 1},
+            {ocs_hold_end, 1},
+            {peer_reject, 1}
         ]}
     ]}
     % ...
@@ -72,12 +73,13 @@ An example of this mapping:
             {cp_inactivity_timeout, 4},
             {up_inactivity_timeout, 4},
             {peer_restart, 7},
-            {aaa_asr, 6},
-            {aaa_error, 9},
-            {aaa_req_timeout, 4},
-            {aaa_conn_error, 10},
-            {aaa_rate_limit, 10},
-            {aaa_ocs_hold_end, 10}
+            {asr, 6},
+            {error, 9},
+            {req_timeout, 4},
+            {conn_error, 10},
+            {rate_limit, 10},
+            {ocs_hold_end, 10},
+            {peer_reject, 10}
         ]}
 ]}
 % ...
@@ -145,12 +147,13 @@ Example of possible config.
             {cp_inactivity_timeout, 4},
             {up_inactivity_timeout, 4},
             {peer_restart, 7},
-            {aaa_asr, 6},
-            {aaa_error, 9},
-            {aaa_req_timeout, 4},
-            {aaa_conn_error, 10},
-            {aaa_rate_limit, 10},
-            {aaa_ocs_hold_end, 10}
+            {asr, 6},
+            {error, 9},
+            {req_timeout, 4},
+            {conn_error, 10},
+            {rate_limit, 10},
+            {ocs_hold_end, 10},
+            {peer_reject, 10}
         ]}
      ]},
      {ergw_aaa_rf, [{transport, 'ergw-pgw-epc'}]},
@@ -165,12 +168,13 @@ Example of possible config.
             {cp_inactivity_timeout, 1},  
             {up_inactivity_timeout, 1},
             {peer_restart, 1},
-            {aaa_asr, 1},
-            {aaa_error, 1},
-            {aaa_req_timeout, 1},
-            {aaa_conn_error, 1},
-            {aaa_rate_limit, 1},
-            {aaa_ocs_hold_end, 1}
+            {asr, 1},
+            {error, 1},
+            {req_timeout, 1},
+            {conn_error, 1},
+            {rate_limit, 1},
+            {ocs_hold_end, 1},
+            {peer_reject, 1}
         ]}
      ]}
     ]},

@@ -37,12 +37,13 @@
    cp_inactivity_timeout => 4,
    up_inactivity_timeout => 4,
    peer_restart => 7,
-   aaa_asr => 6,
-   aaa_error => 9,
-   aaa_req_timeout => 4,
-   aaa_conn_error => 10,
-   aaa_rate_limit => 10,
-   aaa_ocs_hold_end => 10
+   asr => 6,
+   error => 9,
+   req_timeout => 4,
+   conn_error => 10,
+   rate_limit => 10,
+   ocs_hold_end => 10,
+   peer_reject => 10
 }).
 
 -define(RADIUS_AUTH_CONFIG,

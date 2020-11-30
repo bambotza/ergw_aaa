@@ -32,14 +32,13 @@
     {cp_inactivity_timeout, 1},  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
     {up_inactivity_timeout, 1},  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
     {peer_restart, 1},           % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_asr, 1},                % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_error, 1},              % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_asr, 1},                % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_error, 1},              % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_req_timeout, 1},        % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_conn_error, 1},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_rate_limit, 1},         % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
-    {aaa_ocs_hold_end, 1}        % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {asr, 1},                    % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {error, 1},                  % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {req_timeout, 1},            % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {conn_error, 1},             % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {rate_limit, 1},             % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {ocs_hold_end, 1},           % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
+    {peer_reject, 1}             % ?'DIAMETER_BASE_TERMINATION-CAUSE_LOGOUT'
 ]).
 
 -define(VENDOR_ID_3GPP, 10415).
